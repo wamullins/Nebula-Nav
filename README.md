@@ -1,14 +1,14 @@
 # Nebula-Nav: Interactive Starmap Site
 
-Nebula-Nav is an interactive starmap site that allows users to explore the wonders of the universe. With Nebula-Nav, you can navigate through the stars, discover celestial objects, and learn fascinating information about the cosmos. Let your curiosity guide you as you embark on a celestial journey!
+Nebula-Nav is an interactive starmap site that allows users to explore the wonders of the universe. With Nebula-Nav, you can navigate through the stars, discover space objects, and learn fascinating information about the cosmos. Let your curiosity guide you as you embark on a space journey!
 
 ## Features
 
 - **Interactive Starmap**: Explore the vastness of space through an interactive starmap. Zoom in, zoom out, and navigate seamlessly across different regions of the night sky.
 
-- **Celestial Object Information**: Click on celestial objects to access detailed information about them. Discover interesting facts, such as the object's name, type, distance, and more.
+- **Space Object Information**: Click on Space objects to access detailed information about them. Discover interesting facts, such as the object's name, type, distance, and more.
 
-- **Search**: Use the search functionality to find specific celestial objects or constellations quickly. Just type in the name, and Nebula-Nav will guide you to your desired destination.
+- **Search**: Use the search functionality to find specific Space objects or constellations quickly. Just type in the name, and Nebula-Nav will guide you to your desired destination.
 
 - **User-Friendly Interface**: Nebula-Nav offers a sleek and intuitive interface, providing an immersive experience for users to delve into the mysteries of the cosmos.
 
@@ -33,9 +33,14 @@ To run Nebula-Nav locally, follow these steps:
 
 ## API Integration
 
-Nebula-Nav integrates with the following API to provide celestial object data:
+Nebula-Nav integrates with the following API to provide Space object data:
 
-- **SpaceAPI**: A API that provides information about various celestial objects, including stars, planets, galaxies, and more.
+## Relevant Links 
+
+-[Trello Link](https://trello.com/b/xRKUbEC0/nebulanav) 
+-[Wireframe Link](https://www.figma.com/file/G9iycwERjxDzUgm13NrL09/NebulaNav?type=whiteboard&node-id=0-1&t=bBX22sFkUAjfQ8W4-0)
+
+- **SpaceAPI**: A API that provides information about various Space objects, including stars, planets, galaxies, and more.
 
 ## Contributing
 
