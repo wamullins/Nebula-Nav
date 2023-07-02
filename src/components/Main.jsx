@@ -20,7 +20,7 @@ const Main = () => {
             <Route exact path="/moons/:id" element={<MoonPage />} />
             <Route exact path="/space-bodies" element={<SpaceBodies />} />
             <Route exact path="/space-bodies/:id" element={<SpaceBodyPage />} />
-            <Route exact path="/:id" element={<SearchResults />} /> // makethis some 404 type deal
+            <Route exact path="/:id" element={<SearchResults />} /> 
         </Routes>
     )
    
