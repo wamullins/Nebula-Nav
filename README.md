@@ -41,7 +41,7 @@ Nebula-Nav integrates with the following API to provide Space object data:
 -   [Wireframe Link](https://www.figma.com/file/G9iycwERjxDzUgm13NrL09/NebulaNav?type=whiteboard&node-id=0-1&t=bBX22sFkUAjfQ8W4-0)
 -   [Deployed Site](https://nebula-nav.netlify.app/)
 
--   **SpaceAPI**: A API that provides information about various Space objects, including stars, planets, galaxies, and more.
+**SpaceAPI**: A API that provides information about various Space objects, including stars, planets, galaxies, and more.
 
 ## Contributing
 
