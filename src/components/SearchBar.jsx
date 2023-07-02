@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 const SearchBar= () => {
-
     let navigate = useNavigate()
 
     const initialState = {

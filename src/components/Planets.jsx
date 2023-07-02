@@ -24,14 +24,7 @@ const Planets = () => {
                 planets.map((planet) => (
                     <Link to={`${planet.name}`} className="planets-div" key={planet._id}>
                         <p className="div-title-text">{planet.name}</p>
-                        <p className="mass-text">{planet.mass}</p>
-                        <p className="diameter-text">{planet.diameter}</p>
-                        <p className="dist_from_sun-text">{planet.dist_from_sun}</p>
-                        <p className="terrain-text">{planet.terrain}</p>
-                        <p className="water-text">{planet.has_water}</p>
-                        <p className="alien-text">{planet.has_aliens}</p>
-                        <p className="surf-temp-text">{planet.surface_temperature}</p>
-                        <p className="gravity-text">{planet.gravity}</p>
+                        <div> the model or an image is going to look great right here</div>
                     </Link>
                 ))
             }
