@@ -36,14 +36,14 @@ const SearchBar= () => {
 
     return (
         <div className="search-bar-div">
-             <select id="collection" onChange={collectionChange} value={displayInfo.collection}>
+             <select className="select-box" id="collection" onChange={collectionChange} value={displayInfo.collection}>
                 <option value="planets">Planets</option>
                 <option value="moons">Moons</option>
                 <option value="space-bodies">Space Bodies</option>
             </select>
             <form onSubmit={handleSubmit}>
-                <input type="text" id="searchText" onChange={handleChange} value={formState.searchText}/>
-                <button type="submit">Search</button>
+                <input className="search-text" type="text" id="searchText" onChange={handleChange} value={formState.searchText}/>
+                <button className="search-button" type="submit">Search</button>
             </form>
         </div>
     )

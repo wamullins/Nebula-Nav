@@ -22,7 +22,12 @@ const Nav = () => {
                     collection: "moons"
                 })
             }} >Moons</Link>
-            <Link to="/space-bodies">Space Bodies</Link>
+            <Link to="/space-bodies" onClick={()=> {
+                setDisplayInfo({
+                    ...displayInfo, 
+                    collection: "space-bodies"
+                })
+            }}>Space Bodies</Link>
         </div>
     )
 }

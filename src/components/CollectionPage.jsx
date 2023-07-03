@@ -24,7 +24,7 @@ const CollectionPage = () => {
 
     if (displayInfo.collection === "planets") {
         return (
-            <div className="planets-grid">
+            <div className="collection-grid">
                 {
                 collection.map((planet) => (
                         <Link to={`${planet.name}`} className="planets-div" key={planet._id}>

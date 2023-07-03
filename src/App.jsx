@@ -38,3 +38,5 @@ export default App
 /// taking this a step further-> i bet i can use context to specify moon, planet, and spacebody and then use that to dry up the code for everything i have so far. Context directing the call to planet/moon/SO and the id from param used for the object page. 
 
 // finished the above ideas but hit a weird error with reloading he apge wiping out the context. may need to use session storage for this instead of context. will ask tas
+
+// if this all doesn't work i can go back in and hard code things but there's definitely a way to make this work. 
