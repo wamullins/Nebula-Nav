@@ -36,6 +36,10 @@
   padding: 0;
 }
 
+.home-div {
+  margin-top: 10vmin;
+}
+
 .collection-grid {
   margin-top: 10vmin;
   display: grid;
