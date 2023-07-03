@@ -1,26 +1,23 @@
 import { Route, Routes } from "react-router-dom";
+import { useContext } from "react";
+import DataContext from '../DataContext'
 
 import Home from './Home'
-import Planets from './Planets'
-import Moons from './Moons'
-import SpaceBodies from './SpaceBodies'
-import SearchResults from "./SearchResults"; // delete this
+import CollectionPage from './CollectionPage'
+import ObjectPage from "./ObjectPage";
 
-import PlanetPage from "./PlanetPage";
-import MoonPage from "./MoonPage"
-import SpaceBodyPage from "./SpaceBodyPage";
+import NotFound from "./NotFound";
 
 const Main = () => {
+
+    const { displayInfo } = useContext(DataContext)
+
     return (
         <Routes>
             <Route exact path="/" element={<Home />} />
-            <Route exact path="/planets" element={<Planets />} />
-            <Route exact path="/planets/:id" element={<PlanetPage />} />
-            <Route exact path="/moons" element={<Moons />} />
-            <Route exact path="/moons/:id" element={<MoonPage />} />
-            <Route exact path="/space-bodies" element={<SpaceBodies />} />
-            <Route exact path="/space-bodies/:id" element={<SpaceBodyPage />} />
-            <Route exact path="/:id" element={<SearchResults />} /> 
+            <Route exact path={`/${displayInfo.collection}`} element={<CollectionPage />} />
+            <Route exact path={`/${displayInfo.collection}/:id`} element={<ObjectPage />} />
+            <Route exact path="/:id" element={<NotFound />} /> 
         </Routes>
     )
    

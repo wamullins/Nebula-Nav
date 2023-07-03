@@ -1,13 +1,22 @@
 import './App.css'
+import { useState, useContext } from 'react'
+import DataContext from './DataContext'
+
 import Header from "./components/Header"
 import Main from "./components/Main"
 
 function App() {
 
+    const [displayInfo, setDisplayInfo] = useState({
+        collection: ''
+      })
+
     return (
         <div className="app">
-            <Header />
-            <Main />
+            <DataContext.Provider value={{ displayInfo, setDisplayInfo}}>
+                <Header />
+                <Main />
+            </DataContext.Provider>
         </div>
     )
 }
@@ -26,4 +35,6 @@ export default App
 
 // For the search bar: may need to include a drop down menu to specif if the search is for a moon, planet or obejct. could use context to then have this value be passed directly into the axios call url. and into the page url ( no longer need a specific search results page then either )
 
-/// taking this a step further-> i bet i can use context to specify moon, planet, and spacebody and then use that to dry up the code for everything i have so far. Could make the axios call function it's own script that I import as a module into the otehr pages. Then with context directing the call to planet/moon/SO and the id from param used when needed this function would work for everything ( i think )
+/// taking this a step further-> i bet i can use context to specify moon, planet, and spacebody and then use that to dry up the code for everything i have so far. Context directing the call to planet/moon/SO and the id from param used for the object page. 
+
+// finished the above ideas but hit a weird error with reloading he apge wiping out the context. may need to use session storage for this instead of context. will ask tas
