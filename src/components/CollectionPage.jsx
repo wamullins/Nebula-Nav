@@ -1,41 +1,31 @@
-import axios from "axios";
-import { useState, useEffect, useContext } from "react";
-import DataContext from '../DataContext'
-import { Link } from "react-router-dom";
+import { Link, useLocation} from "react-router-dom";
+import useApi from "../useApi"
 
 const CollectionPage = () => {
 
-    const { displayInfo, setDisplayInfo } = useContext(DataContext)
+    let location = useLocation()
+    let path = location.pathname
+    // console.log(path)
 
-    const [collection, setCollection] = useState();
+    const { data:collection } = useApi(path) // data:collection is changing the name of what i am unpacking "give me data, but reanme it as collection (here)"
 
-    useEffect(() => {
-        const getStuff = async () => {
-            const collection_resp = await axios.get(`https://nebula-nav-api.vercel.app/${displayInfo.collection}`);
-            console.log(collection_resp)
-            
-            setCollection(collection_resp.data);
-        };
+    // console.log(collection)
 
-        getStuff();
-    }, []);
+    if (!collection) {return <div className="loading">Loading...</div>} 
 
-    if (!collection) {return <div className="loading">Loading {displayInfo.collection}...</div>} 
-
-    if (displayInfo.collection === "planets") {
-        return (
-            <div className="collection-grid">
-                {
-                collection.map((planet) => (
-                        <Link to={`${planet.name}`} className="planets-div" key={planet._id}>
-                            <p className="div-title-text">{planet.name}</p>
-                            <div> the model or an image is going to look great right here</div>
-                        </Link>
-                    ))
-                }
-            </div>
-        )
-    }
+    return (
+        <div className="collection-grid">
+            {
+                collection.map((object) => (
+                    <Link to={`${object.name}`} className="object-div" key={object._id}>
+                        <p className="div-title-text">{object.name}</p>
+                        <div> the model or an image is going to look great right here</div>
+                    </Link>
+                ))
+            }
+        </div>
+    )
+    
 }
 
 export default CollectionPage

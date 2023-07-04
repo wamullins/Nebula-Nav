@@ -1,5 +1,6 @@
 import './App.css'
-import { useState, useContext } from 'react'
+
+import { useState } from 'react'
 import DataContext from './DataContext'
 
 import Header from "./components/Header"
@@ -7,9 +8,16 @@ import Main from "./components/Main"
 
 function App() {
 
+    // addigning a default value of planets if there isn't anything yet
+    if (!sessionStorage.getItem("collectionType")) {
+        sessionStorage.setItem("collectionType", "planets")
+    }
+
+    console.log(`test from app.jsx sessionstorage collectiontype is ${sessionStorage.getItem("collectionType")}`)
+
     const [displayInfo, setDisplayInfo] = useState({
-        collection: ''
-      })
+        collectionType: sessionStorage.getItem("collectionType")
+    })
 
     return (
         <div className="app">

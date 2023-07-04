@@ -1,33 +1,38 @@
 import { Link } from 'react-router-dom'
 import { useContext } from 'react'
 import DataContext from '../DataContext'
+import { useNavigate } from 'react-router-dom'
 
 const Nav = () => {
 
-    const { displayInfo, setDisplayInfo } =
-    useContext(DataContext)
+    let navigate = useNavigate()
+
+    const { displayInfo, setDisplayInfo}  = useContext(DataContext);
+
+    const handleClick = (e) => {
+        e.preventDefault()
+
+        //clicking on one of these buttons will update the session storage, the context, and navigate to the appropriate url
+
+        setDisplayInfo({
+            ...displayInfo, 
+            collectionType: e.target.value
+        })
+
+        // console.log(`clicked on ${e.target.value}`)
+        sessionStorage.setItem("collectionType", e.target.value)
+        navigate(`/${e.target.value}`)
+    }
+
+    
+
 
     return (
         <div className="nav-links">
             <Link to="/">Home</Link>
-            <Link to="/planets" onClick={()=> {
-                setDisplayInfo({
-                    ...displayInfo, 
-                    collection: "planets"
-                })
-            }} >Planets</Link>
-            <Link to="/moons" onClick={()=> {
-                setDisplayInfo({
-                    ...displayInfo, 
-                    collection: "moons"
-                })
-            }} >Moons</Link>
-            <Link to="/space-bodies" onClick={()=> {
-                setDisplayInfo({
-                    ...displayInfo, 
-                    collection: "space-bodies"
-                })
-            }}>Space Bodies</Link>
+            <button value="planets" onClick={handleClick}>Planets</button>
+            <button value="moons" onClick={handleClick}>Moons</button>
+            <button value="bodies" onClick={handleClick}>Space Bodies</button>
         </div>
     )
 }

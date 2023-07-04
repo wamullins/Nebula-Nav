@@ -1,29 +1,17 @@
-import { useEffect, useState, useContext  } from "react";
-import DataContext from '../DataContext'
-import { useParams, Link } from "react-router-dom";
-import axios from "axios";
+import { Link, useLocation} from "react-router-dom";
+import useApi from "../useApi"
 
 const ObjectPage = () => {
 
-    const [object, setObject] = useState()
-    //setting up the param to pull to be the ship's ID
+    let location = useLocation()
+    let path = location.pathname
 
-    // using context to identify what collection to be looking in
-    const { displayInfo, setDisplayInfo } = useContext(DataContext)
+    const { data:object } = useApi(path)
 
-    let { id } = useParams()
+    if ( path.includes("planets") && !object) {return <h3>Loading Planet</h3>}
+    if ( path.includes("moons") && !object) {return <h3>Loading Moon</h3>}
+    if ( path.includes("bodies") && !object) {return <h3>Loading Body</h3>}
 
-    console.log(displayInfo.collection)
-
-    useEffect(()=>{
-        const getObject = async() => {
-            const response = await axios.get(`https://nebula-nav-api.vercel.app/${displayInfo.collection}/${id}`)
-            setObject(response.data)
-        }
-        getObject()
-    },[])
-
-    if ( displayInfo.collection==="planets" && !object) {return <h3>Loading Planet</h3>}
     return (
         <div className="detail-div">
             <p className="detail-div-title-text">{object.name}</p>
