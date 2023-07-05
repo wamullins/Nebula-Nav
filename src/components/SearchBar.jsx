@@ -15,7 +15,7 @@ const SearchBar= () => {
     const handleSubmit = (e) => {
         e.preventDefault()
         console.log(searchState)
-        
+
         // use the searchState information to change the url
         navigate(`${searchState.collectionType}/${searchState.searchText}`)
         setSearchState(initialState)
@@ -23,17 +23,18 @@ const SearchBar= () => {
 
     const handleChange = (e) => {
         setSearchState({...searchState, [e.target.id]: e.target.value})
-        console.log(searchState)
+        console.log(e.target.value)
+        
     }
-
+    console.log(searchState)
 
     return (
         <div className="search-bar-div">
             <form onSubmit={handleSubmit}>
-                <select className="select-box" id="collection" onChange={handleChange} value={searchState.collectionType}>
+                <select className="select-box" id="collectionType" onChange={handleChange} value={searchState.collectionType}>
                     <option value="planets">Planets</option>
                     <option value="moons">Moons</option>
-                    <option value="space-bodies">Space Bodies</option>
+                    <option value="bodies">Space Bodies</option>
                 </select>
                 <input className="search-text" type="text" id="searchText" onChange={handleChange} value={searchState.searchText}/>
                 <button className="search-button" type="submit">Search</button>
