@@ -1,30 +1,15 @@
 import { Link } from 'react-router-dom'
-import { useContext } from 'react'
-import DataContext from '../DataContext'
 import { useNavigate } from 'react-router-dom'
 
 const Nav = () => {
 
     let navigate = useNavigate()
 
-    const { displayInfo, setDisplayInfo}  = useContext(DataContext);
-
     const handleClick = (e) => {
         e.preventDefault()
-
-        //clicking on one of these buttons will update the session storage, the context, and navigate to the appropriate url
-
-        setDisplayInfo({
-            ...displayInfo, 
-            collectionType: e.target.value
-        })
-
-        // console.log(`clicked on ${e.target.value}`)
-        sessionStorage.setItem("collectionType", e.target.value)
+        //clicking on one of these buttons will navigate to the appropriate url
         navigate(`/${e.target.value}`)
     }
-
-    
 
 
     return (

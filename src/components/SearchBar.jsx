@@ -3,47 +3,41 @@ import { useNavigate } from 'react-router-dom'
 
 const SearchBar= () => {
 
-    // let navigate = useNavigate()
+    let navigate = useNavigate()
 
-    // let collectionInfo = sessionStorage.getItem("collecion")
+    const initialState = {
+        collectionType: '',
+        searchText: ''
+    }
 
-    // const initialState = {
-    //     searchText: ''
-    // }
+    const [searchState, setSearchState] = useState(initialState)
 
-    // const [formState, setFormState] = useState(initialState)
-
-    // const handleSubmit = (e) => {
-    //     e.preventDefault()
-    //     console.log(formState)
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        console.log(searchState)
         
-    //     // use the formState information to change the url
-    //     navigate(`${collectionInfo}/${formState.searchText}`)
+        // use the searchState information to change the url
+        navigate(`${searchState.collectionType}/${searchState.searchText}`)
+        setSearchState(initialState)
+    }
 
-    //     setFormState(initialState)
-    // }
-
-    // const handleChange = (e) => {
-    //     sessionStorage.setItem(`${[e.target.id]}`, `${[e.target.value]}`)
-    // }
-
-    // const collectionChange = (e) => {
-    //     setDisplayInfo({
-    //         ...displayInfo, [e.target.id]: e.target.value})
-    // }
+    const handleChange = (e) => {
+        setSearchState({...searchState, [e.target.id]: e.target.value})
+        console.log(searchState)
+    }
 
 
     return (
         <div className="search-bar-div">
-             {/* <select className="select-box" id="collection" onChange={collectionChange} value={collectionInfo}>
-                <option value="planets">Planets</option>
-                <option value="moons">Moons</option>
-                <option value="space-bodies">Space Bodies</option>
-            </select>
             <form onSubmit={handleSubmit}>
-                <input className="search-text" type="text" id="searchText" onChange={handleChange} value={formState.searchText}/>
+                <select className="select-box" id="collection" onChange={handleChange} value={searchState.collectionType}>
+                    <option value="planets">Planets</option>
+                    <option value="moons">Moons</option>
+                    <option value="space-bodies">Space Bodies</option>
+                </select>
+                <input className="search-text" type="text" id="searchText" onChange={handleChange} value={searchState.searchText}/>
                 <button className="search-button" type="submit">Search</button>
-            </form> */}
+            </form>
         </div>
     )
 }

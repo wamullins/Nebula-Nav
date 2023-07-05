@@ -1,6 +1,4 @@
 import { Route, Routes } from "react-router-dom";
-// import { useContext } from "react"
-// import DataContext from '../DataContext'
 
 import Home from './Home'
 import CollectionPage from './CollectionPage'
@@ -9,12 +7,6 @@ import ObjectPage from "./ObjectPage";
 import NotFound from "./NotFound";
 
 const Main = () => {
-
-    // const { displayInfo }  = useContext(DataContext);
-    
-    // const collectionType = sessionStorage.getItem("collectionType")
-    
-    // console.log(`from Main.jsx, displayInfo is ${collectionType}`)
 
     return (
         <Routes>
