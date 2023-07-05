@@ -6,7 +6,7 @@ const SearchBar= () => {
     let navigate = useNavigate()
 
     const initialState = {
-        collectionType: '',
+        collectionType: 'planets',
         searchText: ''
     }
 

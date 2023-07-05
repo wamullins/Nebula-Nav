@@ -6,15 +6,13 @@ const ObjectPage = () => {
     let location = useLocation()
     let path = location.pathname
 
-    
-
     const { data:object } = useApi(path)
-
-    // if { path !== }
 
     if ( path.includes("planets") && !object) {return <h3>Loading Planet</h3>}
     if ( path.includes("moons") && !object) {return <h3>Loading Moon</h3>}
     if ( path.includes("bodies") && !object) {return <h3>Loading Body</h3>}
+
+    if ((typeof object) !== "object") {return <h3>{object}</h3>}
 
     return (
         <div className="detail-div">
