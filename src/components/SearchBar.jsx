@@ -16,8 +16,12 @@ const SearchBar= () => {
         e.preventDefault()
         console.log(searchState)
 
+        const formatedSearchText = searchState.searchText.charAt(0).toUpperCase() + searchState.searchText.slice(1).toLowerCase()
+        console.log(formatedSearchText)
+        /// make the searchState.searchText first letter be capitalized and the rest be lowercase
+
         // use the searchState information to change the url
-        navigate(`${searchState.collectionType}/${searchState.searchText}`)
+        navigate(`${searchState.collectionType}/${formatedSearchText}`)
         setSearchState(initialState)
     }
 
