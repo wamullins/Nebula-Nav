@@ -1,6 +1,6 @@
 import { Link, useLocation} from "react-router-dom";
 import useApi from "../useApi"
-
+import Transition from './Transition'
 const BodyPage = () => {
 
     let location = useLocation()
@@ -12,6 +12,7 @@ const BodyPage = () => {
     if ((typeof object) !== "object") {return <h3>{object}</h3>}
     
     return (
+        <Transition>
         <div className="detail-div">
             <p className="detail-div-title-text">{object.name}</p>
             <p className="mass-text">Mass: {object.mass}</p>
@@ -23,6 +24,7 @@ const BodyPage = () => {
             <p className="gravity-text">Gravity: {object.gravity}</p>
             <Link to="/bodies" className="back-btn">Back</Link>
         </div>
+        </Transition>
     )
 }
 
