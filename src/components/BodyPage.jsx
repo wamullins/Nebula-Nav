@@ -1,6 +1,8 @@
 import { Link, useLocation} from "react-router-dom";
 import useApi from "../useApi"
 import Transition from './Transition'
+import CommentSubmit from "./CommentSubmit";
+
 const BodyPage = () => {
 
     let location = useLocation()
@@ -23,6 +25,7 @@ const BodyPage = () => {
             <p className="surf-temp-text">Average Surface Temperature: {object.surface_temperature}</p>
             <p className="gravity-text">Gravity: {object.gravity}</p>
             <Link to="/bodies" className="back-btn">Back</Link>
+            <CommentSubmit objectId={object._id}/>
         </div>
         </Transition>
     )
