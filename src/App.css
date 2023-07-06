@@ -136,3 +136,17 @@ main {
   align-self: center;
   text-decoration: none;
 }
+
+.planetImage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.planetImage img
+{
+border-radius: 50%;
+height: Auto;
+max-width: 100%;
+}
+

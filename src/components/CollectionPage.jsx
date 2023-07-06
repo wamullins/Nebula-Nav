@@ -18,7 +18,9 @@ const CollectionPage = () => {
         {collection.map((object) => (
           <Link to={`${object.name}`} className="object-div" key={object._id}>
             <p className="div-title-text">{object.name}</p>
-            <img className="objectImg" src= {object.image} width="200" height="200" />
+            <div className="planetImage">
+              <img className="objectImg" src= {object.image} width="200" height="200" />
+            </div>
           </Link>
         ))}
       </div>
