@@ -165,7 +165,7 @@ window.addEventListener('mouseup', () => (mouseDown = false));
     return (
         <Transition> 
             <div className="home-div">3D map page</div>
-            <canvas class="webgl"></canvas>
+            <canvas className="webgl"></canvas>
             <button onClick={showMap}>SHOW MAP</button>
         </Transition>
     );
