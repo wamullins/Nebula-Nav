@@ -14,6 +14,9 @@ const MoonPage = () => {
     return (
         <div className="detail-div">
             <p className="detail-div-title-text">{object.name}</p>
+                <div className="planetImage">
+                    <img className="objectImg" src= {object.image} width="200" height="200" />
+                </div>
             <p className="home-planet-text">Orbiting around {object.home_planet}</p>
             <p className="mass-text">Mass: {object.mass}</p>
             <p className="diameter-text">Diameter: {object.diameter}</p>
