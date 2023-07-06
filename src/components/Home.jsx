@@ -162,6 +162,7 @@ let mouseDown = false;
 window.addEventListener('mousedown', () => (mouseDown = true));
 window.addEventListener('mouseup', () => (mouseDown = false));
 }
+
 return (
   <Transition>
     <div className="home-div">
@@ -173,7 +174,6 @@ return (
     </div>
   </Transition>
 );
-
 };
 
 export default Home;

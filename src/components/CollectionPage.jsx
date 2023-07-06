@@ -1,6 +1,7 @@
 import { Link, useLocation } from "react-router-dom";
 import useApi from "../useApi";
 import Transition from "./Transition";
+import '../app.css'
 
 const CollectionPage = () => {
   let location = useLocation();
@@ -17,7 +18,9 @@ const CollectionPage = () => {
         {collection.map((object) => (
           <Link to={`${object.name}`} className="object-div" key={object._id}>
             <p className="div-title-text">{object.name}</p>
-            <div> the model or an image is going to look great right here</div>
+            <div className="planetImage">
+              <img className="objectImg" src= {object.image} width="200" height="200" />
+            </div>
           </Link>
         ))}
       </div>
