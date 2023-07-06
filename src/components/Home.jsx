@@ -55,7 +55,11 @@ const canvas = document.querySelector('.webgl');
 const renderer = new THREE.WebGLRenderer({ canvas });
 renderer.setSize(sizes.width, sizes.height);
 renderer.setPixelRatio(window.devicePixelRatio);
-
+ // Set the background texture
+ const backgroundTexture = textureLoader.load(
+  'https://marketplace.canva.com/EAFTQEWI-Ko/1/0/1600w/canva-black-sky-galaxy-stars-desktop-wallpaper-iWMZ0xN6KXs.jpg'
+);
+scene.background = backgroundTexture;
 // Controls
 const controls = new OrbitControls(camera, canvas);
 controls.enableDamping = true;
@@ -163,14 +167,17 @@ window.addEventListener('mousedown', () => (mouseDown = true));
 window.addEventListener('mouseup', () => (mouseDown = false));
 }
 
+
 return (
   <Transition>
     <div className="home-div">
-      <h1>Welcome to the 3D Map of Outer Space</h1>
-      <p>Explore the wonders of the universe with our interactive 3D map.</p>
+      <h1>.NEBULANAV</h1>
+      <h2>Explore the Wonders of the Universe</h2>
+        <p>Welcome to our educational 3D star map, where learning meets the vastness of space. Embark on an extraordinary journey of discovery as you delve into the mysteries, beauty, and scientific wonders of the universe.</p>
       
+
       <canvas className="webgl"></canvas>
-      <button onClick={showMap}>Lets check out their orbits</button>
+      <button onClick={showMap}>Lets check out the planets orbits</button>
     </div>
   </Transition>
 );
