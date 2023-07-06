@@ -2,6 +2,7 @@ import { Link, useLocation} from "react-router-dom";
 import useApi from "../useApi"
 import Transition from './Transition'
 import CommentSubmit from "./CommentSubmit";
+import CommentSection from "./CommentSection";
 
 const BodyPage = () => {
 
@@ -26,6 +27,7 @@ const BodyPage = () => {
             <p className="gravity-text">Gravity: {object.gravity}</p>
             <Link to="/bodies" className="back-btn">Back</Link>
             <CommentSubmit objectId={object._id}/>
+            <CommentSection objectId={object._id}/>
         </div>
         </Transition>
     )

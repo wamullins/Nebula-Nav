@@ -1,5 +1,7 @@
 import { Link, useLocation} from "react-router-dom";
 import useApi from "../useApi"
+import CommentSubmit from "./CommentSubmit";
+import CommentSection from "./CommentSection";
 
 const MoonPage = () => {
 
@@ -25,6 +27,8 @@ const MoonPage = () => {
             <p className="surf-temp-text">Surface Temperature: {object.surface_temperature}</p>
             <p className="gravity-text">Gravity: {object.gravity}</p>
             <Link to="/moons" className="back-btn">Back</Link>
+            <CommentSubmit objectId={object._id}/>
+            <CommentSection objectId={object._id}/>
         </div>
     )
 }
