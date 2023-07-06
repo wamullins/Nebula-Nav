@@ -13,14 +13,13 @@ const CommentSubmit = ({ objectId }) => {
 
     const handleChange = (e) => {
         setFormState({...formState, [e.target.id]: e.target.value})
-        console.log(e.target.value)
     }
 
     const handleSubmit = async (e) => {
         e.preventDefault()
         console.log(formState)
 
-        // await axios.post("https://nebula-nav-api.vercel.app/comments", {formState});
+        await axios.post("https://nebula-nav-api.vercel.app/comments", formState);
 
         setFormState(initialState)
     }
