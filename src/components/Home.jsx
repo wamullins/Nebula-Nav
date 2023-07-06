@@ -162,13 +162,18 @@ let mouseDown = false;
 window.addEventListener('mousedown', () => (mouseDown = true));
 window.addEventListener('mouseup', () => (mouseDown = false));
 }
-    return (
-        <Transition> 
-            <div className="home-div">3D map page</div>
-            <canvas class="webgl"></canvas>
-            <button onClick={showMap}>SHOW MAP</button>
-        </Transition>
-    );
+return (
+  <Transition>
+    <div className="home-div">
+      <h1>Welcome to the 3D Map of Outer Space</h1>
+      <p>Explore the wonders of the universe with our interactive 3D map.</p>
+      
+      <canvas className="webgl"></canvas>
+      <button onClick={showMap}>Lets check out their orbits</button>
+    </div>
+  </Transition>
+);
+
 };
 
 export default Home;

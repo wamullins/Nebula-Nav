@@ -79,13 +79,22 @@ main {
  color: white;
 }
 
-.webgl{
+
+
+.webgl {
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 450%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  height: 90%;
   z-index: 1;
-  margin-top: 10vmin;
 }
+
+
+
+
+
 
 .collection-grid > * {
   border: 0.3vmin solid rgb(255, 255, 255);
