@@ -76,6 +76,7 @@ main {
   grid-template-columns: repeat(3, 30vw);
   gap: 2vmin;
  text-decoration: none;
+ 
  color: white;
 }
 

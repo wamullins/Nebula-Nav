@@ -1,6 +1,6 @@
 import Transition from "./Transition";
 import * as THREE from 'three';
-import '../app.css';
+import '../App.css';
 
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 import sunTexture from '../assets/sun.jpeg';
