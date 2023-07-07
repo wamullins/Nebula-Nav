@@ -1,12 +1,12 @@
 import './App.css'
-import Transition from './components/Transition'
+ 
 import Header from "./components/Header"
 import Main from "./components/Main"
 
 function App() {
 
     return (
-<Transition>
+
         <div className="app">
                 <Header />
                 <main >
@@ -14,7 +14,7 @@ function App() {
                 </main>
                 
         </div>
-        </Transition>
+        
     )
 }
 

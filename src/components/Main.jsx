@@ -1,7 +1,7 @@
 import { Route, Routes } from 'react-router-dom';
 import '../app.css';
 
-import Transition from './Transition';
+ 
 import Home from './Home';
 import CollectionPage from './CollectionPage';
 import PlanetPage from './PlanetPage';
@@ -12,7 +12,7 @@ import SolarSystem from './SolarSystem';
 
 const Main = () => {
   return (
-    <Transition>
+     
       <Routes>
         <Route exact path="/" element={<Home />} />
         <Route exact path="/planets" element={<CollectionPage />} />
@@ -24,7 +24,7 @@ const Main = () => {
         <Route exact path="/solar-system" element={<SolarSystem />} />  
         <Route exact path="/:id" element={<NotFound />} />
       </Routes>
-    </Transition>
+     
   );
 };
 
