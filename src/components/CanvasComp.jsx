@@ -26,7 +26,7 @@ function CanvasComp() {
             name: "Sun",
             color: 'yellow',
             texture: sunTexture,
-            position: [ -360, 0, 0 ],
+            position: [ 0, 0, 0 ],
             radius: 48,
             rotationSpeed: 0
         },
@@ -65,7 +65,7 @@ function CanvasComp() {
         {
             name: "Jupiter",
             color: 'orange',
-            texture: jupiterTexture,
+            texture: saturnTexture,
             position: [ 40, 0, 0 ],
             radius: 44,
             rotationSpeed: 0.005
@@ -73,7 +73,7 @@ function CanvasComp() {
         {
             name: "Saturn",
             color: 'beige',
-            texture: saturnTexture,
+            texture: jupiterTexture,
             position: [ 160, 0, 0 ],
             radius: 40,
             rotationSpeed: 0.004
