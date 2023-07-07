@@ -14,6 +14,8 @@ import uranusTexture from '../assets/uranus.jpeg'
 import neptuneTexture from '../assets/neptune.jpeg'
 import plutoTexture from '../assets/pluto.jpeg'
 
+import CanvasComp from "./CanvasComp"
+
 const Home = () => {
 
 function showMap() {
@@ -178,6 +180,7 @@ return (
 
       <canvas className="webgl"></canvas>
       <button onClick={showMap}>Lets check out the planets orbits</button>
+      <CanvasComp />
     </div>
   </Transition>
 );
