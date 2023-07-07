@@ -34,7 +34,7 @@ function CanvasComp() {
             name: "Mercury",
             color: 'burlywood',
             texture: mercuryTexture,
-            position: [ -280, 0, 0 ],
+            position: [ 30, 0, 0 ],
             radius: 20,
             rotationSpeed: 0.009
         },
@@ -42,7 +42,7 @@ function CanvasComp() {
             name: "Venus",
             color: 'brown',
             texture: venusTexture,
-            position: [ -200, 0, 0 ],
+            position: [ 50, 0, 0 ],
             radius: 24,
             rotationSpeed: 0.008
         },
