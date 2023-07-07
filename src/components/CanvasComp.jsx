@@ -109,6 +109,8 @@ function CanvasComp() {
         height: window.innerHeight,
     };
 
+    console.log(sizes)
+
     // testing area that is currently not working
     /////////////////  /////////////////  /////////////////  ///////////////// 
     // planetData.forEach((planet) => console.log(planet.name))
@@ -123,12 +125,11 @@ function CanvasComp() {
 
     console.log(planetData[0])
     console.log(planetData[0].position)
-    /////////////////  /////////////////  /////////////////  /////////////////
+    /////////////////  /////////////////  /////////////////  ///////////////// 
 
     return (
         <section className='canvas-div'>
-            {/* Canvas 1 */}
-            <Canvas className='canvas' camera={{fov: 45, near: 0.1, far: 1000, position: [0,200,500]}}>
+            <Canvas className='canvas' id='this-is-the-canvas' camera={{fov: 45, near: 0.1, far: 1000, position: [0,20,70]}}>
                 <pointLight position={[10, 10, 10]} />
                 <ambientLight />
 
