@@ -8,7 +8,7 @@ const CommentEdit = ({ commentId, initialContent, onSave }) => {
   const handleSave = async () => {
     try {
       await axios.put(
-        `http://localhost:3001/comments/${commentId}`,
+        `https://nebula-nav-api.vercel.app/comments/${commentId}`,
         { content }
       )
 
