@@ -81,41 +81,13 @@ main {
  color: white;
 }
 
-/* .canvas-div{
+.canvas-div{
   width: 100vw;
   height: 80vh;
   z-index: 1;
-} */
+}
 
-/*
-canvas {
-  min-width: 100vw;
-  min-height: 80vh;
-} */
-
-/* #this-is-the-canvas {
-  background-color: white;
-  /* position: absolute;
-  top: 0;
-  left: 0; 
-} */
-
-/* #this-is-the-canvas > * > *{
-  background-color: red;
-  min-width: 80vw;
- this does affect the right spot, just does't friggin work
-} */
-
-
-/* .webgl {
-  position: absolute;
-  top: 275%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 90%;
-  height: 90%;
-  z-index: 1;
-} */
+  
 
 .home-div {
   margin: 2rem;

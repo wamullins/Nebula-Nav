@@ -117,9 +117,10 @@ function CanvasComp() {
 
     console.log(planetData)
 
-    const testmap = planetData.map((planet, idx) => {
-        <SphereComp key={idx} position={planet.position} texture={planet.texture} radius={planet.radius} color={planet.color} rotSpeed={planet.rotationSpeed}/>
-    })
+    const testmap = planetData.map((planet, idx) => (
+  <SphereComp key={idx} position={planet.position} texture={planet.texture} radius={planet.radius} color={planet.color} rotSpeed={planet.rotationSpeed} />
+));
+
     // i have no idea why this is still popping up as undefined
     console.log(testmap)
 
@@ -129,7 +130,7 @@ function CanvasComp() {
 
     return (
         <section className='canvas-div'>
-            <Canvas className='canvas' id='this-is-the-canvas' camera={{fov: 45, near: 0.1, far: 1000, position: [0,20,70]}}>
+            <Canvas className='canvas' id='this-is-the-canvas' camera={{fov: 45, near: 0.1, far: 1000, position: [0,70,600]}}>
                 <pointLight position={[10, 10, 10]} />
                 <ambientLight />
 
