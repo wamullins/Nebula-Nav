@@ -86,7 +86,7 @@ main {
   z-index: 1;
 }
 
-.webgl {
+/* .webgl {
   position: absolute;
   top: 275%;
   left: 50%;
@@ -94,7 +94,7 @@ main {
   width: 90%;
   height: 90%;
   z-index: 1;
-}
+} */
 
 .home-div {
   margin: 2rem;
