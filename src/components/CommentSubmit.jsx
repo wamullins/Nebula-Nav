@@ -19,7 +19,9 @@ const CommentSubmit = ({ objectId }) => {
         e.preventDefault()
         console.log(formState)
 
-        await axios.post("https://nebula-nav-api.vercel.app/comments", formState);
+        const response = await axios.post("https://nebula-nav-api.vercel.app/comments", formState);
+        const commentId = response.data._id
+        localStorage.setItem(`${commentId}`, commentId)
 
         setFormState(initialState)
     }
