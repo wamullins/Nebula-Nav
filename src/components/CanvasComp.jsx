@@ -128,7 +128,7 @@ function CanvasComp() {
     return (
         <section className='canvas-div'>
             {/* Canvas 1 */}
-            <Canvas camera={{fov: 40, near: 0.1, far: 5000, position: [0,0,150]}}>
+            <Canvas camera={{fov: 80, near: 0.1, far: 10000, position: [0,0,150]}}>
                 <pointLight position={[10, 10, 10]} />
                 <ambientLight />
 
