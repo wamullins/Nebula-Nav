@@ -42,6 +42,7 @@ function CanvasComp() {
             name: "Venus",
             color: 'brown',
             texture: venusTexture,
+
             position: [ 200, 0, 0 ],
             radius: 24,
             rotationSpeed: 0.008
