@@ -1,195 +1,59 @@
-import Transition from "./Transition";
-import * as THREE from 'three';
-import '../App.css';
+import React, { useState } from 'react';
 
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
-import sunTexture from '../assets/sun.jpeg';
-import mercuryTexture from '../assets/mercury.png';
-import venusTexture from '../assets/venus.jpeg';
-import earthTexture from '../assets/earth.jpeg';
-import marsTexture from '../assets/mars.jpeg'
-import jupiterTexture from '../assets/jupiter.jpeg'
-import saturnTexture from '../assets/Saturn.jpeg'
-import uranusTexture from '../assets/uranus.jpeg'
-import neptuneTexture from '../assets/neptune.jpeg'
-import plutoTexture from '../assets/pluto.jpeg'
+const HomePage = () => {
+  const spaceFacts = [
+    'The Sun is a star, and it accounts for 99.86% of the mass in the solar system.',
+    'The Milky Way galaxy contains billions of stars, and it is estimated that there are over 100 billion galaxies in the observable universe.',
+    'A black hole is a region in space with gravity so strong that nothing, not even light, can escape its pull.',
+    'Neutron stars are incredibly dense objects that form when a massive star collapses under its own gravity after a supernova explosion.',
+    'Astronauts experience microgravity in space, which can lead to changes in their bodies such as bone and muscle loss.',
+    'The International Space Station (ISS) is a habitable space station that serves as a laboratory for scientific research and international cooperation.',
+    'Jupiter, the largest planet in our solar system, has a famous feature known as the Great Red Spot, which is a persistent high-pressure storm.',
+    'The Hubble Space Telescope, launched in 1990, has provided stunning images and valuable scientific data about the universe.',
+    'The speed of light in a vacuum is approximately 299,792 kilometers per second, or about 186,282 miles per second.',
+    'The concept of a "day" and a "year" is different in space. For example, a day on Venus is longer than its year.',
+  ];
 
-import CanvasComp from "./CanvasComp"
+  const [randomFact, setRandomFact] = useState('');
 
-const Home = () => {
+  const getRandomFact = () => {
+    const randomIndex = Math.floor(Math.random() * spaceFacts.length);
+    setRandomFact(spaceFacts[randomIndex]);
+  };
 
-function showMap() {
-
-
-// Scene
-const scene = new THREE.Scene();
-
-const textureLoader = new THREE.TextureLoader();
-
-// Sizes
-const sizes = {
-  width: window.innerWidth,
-  height: window.innerHeight,
-};
-
-// Light
-const light = new THREE.PointLight(0xffffff, 1, 100, 2);
-light.position.set(10, 10, 10);
-scene.add(light);
-
-// Second Light
-const centerLight = new THREE.PointLight(0xffff00, 0.5, 50);
-centerLight.position.set(0, 0, 0);
-scene.add(centerLight);
-// Ambient Light
-const ambientLight = new THREE.AmbientLight(0xffffff, 0.7);
-scene.add(ambientLight);
-
-// Camera
-const camera = new THREE.PerspectiveCamera(40, sizes.width / sizes.height, 0.1, 1000);
-camera.position.z = 70;
-camera.far = 5000; // Increase the far clipping plane value
-camera.updateProjectionMatrix();
-scene.add(camera);
-
-// Renderer
-const canvas = document.querySelector('.webgl');
-const renderer = new THREE.WebGLRenderer({ canvas });
-renderer.setSize(sizes.width, sizes.height);
-renderer.setPixelRatio(window.devicePixelRatio);
- // Set the background texture
- const backgroundTexture = textureLoader.load(
-  'https://marketplace.canva.com/EAFTQEWI-Ko/1/0/1600w/canva-black-sky-galaxy-stars-desktop-wallpaper-iWMZ0xN6KXs.jpg'
-);
-scene.background = backgroundTexture;
-// Controls
-const controls = new OrbitControls(camera, canvas);
-controls.enableDamping = true;
-controls.autoRotate = false;
-controls.autoRotateSpeed = 5;
-
-// Resizing
-window.addEventListener('resize', () => {
-  sizes.width = window.innerWidth;
-  sizes.height = window.innerHeight;
-
-  camera.aspect = sizes.width / sizes.height;
-  camera.updateProjectionMatrix();
-  renderer.setSize(sizes.width, sizes.height);
-});
-
-// Sphere Data
-const sphereData = [
-  { color: 'yellow', radius: 48, position: { x: -360, y: 0, z: 0 }, rotationSpeed: 0 },
-  { color: 'burlywood', radius: 20, position: { x: -280, y: 0, z: 0 }, rotationSpeed: 0.009 },
-  { color: 'brown', radius: 24, position: { x: -200, y: 0, z: 0 }, rotationSpeed: 0.008 },
-  { color: 'blue', radius: 28, position: { x: -120, y: 0, z: 0 }, rotationSpeed: 0.007 },
-  { color: 'red', radius: 28, position: { x: -40, y: 0, z: 0 }, rotationSpeed: 0.006 },
-  { color: 'orange', radius: 44, position: { x: 40, y: 0, z: 0 }, rotationSpeed: 0.005 },
-  { color: 'beige', radius: 40, position: { x: 160, y: 0, z: 0 }, rotationSpeed: 0.004 },
-  { color: 'aqua', radius: 36, position: { x: 240, y: 0, z: 0 }, rotationSpeed: 0.003 },
-  { color: 'purple', radius: 32, position: { x: 320, y: 0, z: 0 }, rotationSpeed: 0.002 },
-  { color: 'white', radius: 12, position: { x: 400, y: 0, z: 0 }, rotationSpeed: 0.005 },
-];
-
-// Create a group to hold the spheres
-const spheresGroup = new THREE.Group();
-
-// Create Spheres
-sphereData.forEach((data, index) => {
-  const geometry = new THREE.SphereGeometry(data.radius, 64, 64);
-
-  let material;
-  if (data.color === 'yellow') {
-    material = new THREE.MeshStandardMaterial({ map: textureLoader.load(sunTexture) });
-  } else if (index === 1) {
-    material = new THREE.MeshStandardMaterial({ map: textureLoader.load(mercuryTexture) });
-  } else if (index === 2) {
-    material = new THREE.MeshStandardMaterial({ map: textureLoader.load(venusTexture) });
-  } else if (index === 3) {
-    material = new THREE.MeshStandardMaterial({ map: textureLoader.load(earthTexture) });
-  } else if (index === 4) {
-    material = new THREE.MeshStandardMaterial({ map: textureLoader.load(marsTexture) });
-  } else if (index === 5) {
-    material = new THREE.MeshStandardMaterial({ map: textureLoader.load(jupiterTexture) });
-  } else if (index === 6) {
-    material = new THREE.MeshStandardMaterial({ map: textureLoader.load(saturnTexture) });
-  } else if (index === 7) {
-    material = new THREE.MeshStandardMaterial({ map: textureLoader.load(uranusTexture) });
-  } else if (index === 8) {
-    material = new THREE.MeshStandardMaterial({ map: textureLoader.load(neptuneTexture) });
-  } else if (index === 9) {
-    material = new THREE.MeshStandardMaterial({ map: textureLoader.load(plutoTexture) });
-  } else {
-    material = new THREE.MeshStandardMaterial({ color: data.color });
-  }
-
-  const mesh = new THREE.Mesh(geometry, material);
-  mesh.position.set(data.position.x, data.position.y, data.position.z);
-
-  // Add the mesh to the spheres group
-  spheresGroup.add(mesh);
-});
-
-// Add the spheres group to the scene
-scene.add(spheresGroup);
-
-const raycaster = new THREE.Raycaster();
-const mouse = new THREE.Vector2();
- 
-
-// Render Loop
-const render = () => {
-  controls.update();
-
-  // Rotate the other spheres around the yellow sphere
-  const yellowSphere = spheresGroup.children[0]; // Get the yellow sphere
-
-  spheresGroup.children.forEach((sphere, index) => {
-    if (index !== 0) {
-      const rotationSpeed = sphereData[index].rotationSpeed;
-      const axis = new THREE.Vector3(0, 1, 0).normalize();
-      sphere.position.sub(yellowSphere.position);
-      sphere.position.applyAxisAngle(axis, rotationSpeed);
-      sphere.position.add(yellowSphere.position);
-    }
-  });
-
-  renderer.render(scene, camera);
-  requestAnimationFrame(render);
-};
-render();
-
-// Timeline
-
-
-// Mouse Interaction
-let mouseDown = false;
-window.addEventListener('mousedown', () => (mouseDown = true));
-window.addEventListener('mouseup', () => (mouseDown = false));
-}
-
-
-return (
-  <Transition>
-    <div className="home-div">
-      <h1>.NEBULANAV</h1>
-      <h2>Explore the Wonders of the Universe</h2>
-        <p>Welcome to our educational 3D star map, where learning meets the vastness of space. Embark on an extraordinary journey of discovery as you delve into the mysteries, beauty, and scientific wonders of the universe.</p>
-      
-
-      <canvas className="webgl"></canvas>
-      <button onClick={showMap}>Lets check out the planets orbits</button>
-      <CanvasComp />
+  return (
+    <div>
+      <h1>.NebulaNav</h1>
+      <p>Here is a random fact about space:</p>
+      <p>{randomFact}</p>
+      <button onClick={getRandomFact}>Get Random Fact</button>
+      <div style={gridContainerStyle}>
+        <a href="/planets" style={squareStyle}>Planets</a>
+        <a href="/moons" style={squareStyle}>Moons</a>
+        <a href="/bodies" style={squareStyle}>Space Bodies</a>
+        <a href="/solar-system" style={squareStyle}>Solar System</a>
+      </div>
     </div>
-  </Transition>
-);
+  );
 };
 
-export default Home;
+const gridContainerStyle = {
+  display: 'grid',
+  gridTemplateColumns: 'repeat(2, 1fr)',
+  gap: '20px',
+};
 
+const squareStyle = {
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  width: '200px',
+  height: '200px',
+  backgroundColor: 'lightblue',
+  textDecoration: 'none',
+  color: 'black',
+  fontWeight: 'bold',
+  fontSize: '18px',
+};
 
-
-
-   
-// export default Home;
+export default HomePage;
