@@ -34,7 +34,7 @@ function CanvasComp() {
             name: "Mercury",
             color: 'burlywood',
             texture: mercuryTexture,
-            position: [ 30, 0, 0 ],
+            position: [ 100, 0, 0 ],
             radius: 20,
             rotationSpeed: 0.009
         },
@@ -42,7 +42,8 @@ function CanvasComp() {
             name: "Venus",
             color: 'brown',
             texture: venusTexture,
-            position: [ 50, 0, 0 ],
+
+            position: [ 200, 0, 0 ],
             radius: 24,
             rotationSpeed: 0.008
         },
@@ -50,7 +51,7 @@ function CanvasComp() {
             name: "Earth",
             color: 'blue',
             texture: earthTexture,
-            position: [ -120, 0, 0 ],
+            position: [300, 0, 0 ],
             radius: 28,
             rotationSpeed: 0.007
         },
@@ -58,7 +59,7 @@ function CanvasComp() {
             name: "Mars",
             color: 'red',
             texture: marsTexture,
-            position: [ -40, 0, 0 ],
+            position: [ 400, 0, 0 ],
             radius: 28,
             rotationSpeed: 0.006
         },
@@ -66,7 +67,7 @@ function CanvasComp() {
             name: "Jupiter",
             color: 'orange',
             texture: saturnTexture,
-            position: [ 40, 0, 0 ],
+            position: [ 500, 0, 0 ],
             radius: 44,
             rotationSpeed: 0.005
         },
@@ -74,7 +75,7 @@ function CanvasComp() {
             name: "Saturn",
             color: 'beige',
             texture: jupiterTexture,
-            position: [ 160, 0, 0 ],
+            position: [ 600, 0, 0 ],
             radius: 40,
             rotationSpeed: 0.004
         },
@@ -82,7 +83,7 @@ function CanvasComp() {
             name: "Uranus",
             color: 'aqua',
             texture: uranusTexture,
-            position: [ 240, 0, 0 ],
+            position: [ 700, 0, 0 ],
             radius: 36,
             rotationSpeed: 0.003
         },
@@ -90,7 +91,7 @@ function CanvasComp() {
             name: "Neptune",
             color: 'purple',
             texture: neptuneTexture,
-            position: [320, 0, 0 ],
+            position: [800, 0, 0 ],
             radius: 32,
             rotationSpeed: 0.002
         },
@@ -98,7 +99,7 @@ function CanvasComp() {
             name: "Pluto",
             color: 'white',
             texture: plutoTexture,
-            position: [ 400, 0, 0 ],
+            position: [ 900, 0, 0 ],
             radius: 12,
             rotationSpeed: 0.005
         },
@@ -130,7 +131,7 @@ function CanvasComp() {
 
     return (
         <section className='canvas-div'>
-            <Canvas className='canvas' id='this-is-the-canvas' camera={{fov: 45, near: 0.1, far: 1000, position: [0,70,600]}}>
+            <Canvas className='canvas' id='this-is-the-canvas' camera={{fov: 45, near: 0.1, far: 3000, position: [0,500,1500]}}>
                 <pointLight position={[10, 10, 10]} />
                 <ambientLight />
 
