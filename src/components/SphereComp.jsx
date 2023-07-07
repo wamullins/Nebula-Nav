@@ -1,5 +1,5 @@
 import React, { useRef, useState } from "react";
-// import { useNavigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 
 
 // https://www.youtube.com/watch?v=hgWxXJW3o6U&ab_channel=HacktheNorth -- helpful video, haven't seen all of it
@@ -10,7 +10,7 @@ import { useTexture } from "@react-three/drei" // this will require npm i three 
  
 function SphereComp(props) {
 
-    // let navigate = useNavigate()
+    let navigate = useNavigate()
 
     const texture = useTexture(props.texture)
 
@@ -25,12 +25,22 @@ function SphereComp(props) {
     // Subscribe this component to the render-loop, rotate the mesh every frame
     useFrame((state, delta) => (ref.current.rotation.y += props.rotSpeed));
     // Return the view, these are regular Threejs elements expressed in JSX
+
+    const handleClick = (name) => {
+        if (name === "Sun") {
+            navigate(`/bodies/${props.name}`)
+        } else {
+            navigate(`/planets/${props.name}`)
+        }
+    }
+
+
     return (
         <mesh
         {...props}
         ref={ref}
         scale={hovered ? 1.1 : 1}
-        onClick={(event) => {console.log(`trying to go to /planets/${props.name}`)}} /// can use an onclick function to change the url. i don't have routers set up on this so i can't use usenaviate, so for now it is just console logging out
+        onClick={(event) => handleClick(props.name)} /// can use an onclick function to change the url. i don't have routers set up on this so i can't use usenaviate, so for now it is just console logging out
         onPointerOver={(event) => hover(true)}
         onPointerOut={(event) => hover(false)}
         >
