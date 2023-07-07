@@ -5,7 +5,7 @@ function SolarSystemMap() {
     return (
       <div>
          <Transition>
-        <CanvasComp />
+            <CanvasComp />
         </Transition>
       </div>
     );

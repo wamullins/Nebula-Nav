@@ -39,7 +39,7 @@ function CanvasComp() {
             rotationSpeed: 0.009
         },
         {
-            name: "Nenus",
+            name: "Venus",
             color: 'brown',
             texture: venusTexture,
             position: [ -200, 0, 0 ],
@@ -128,7 +128,7 @@ function CanvasComp() {
     return (
         <section className='canvas-div'>
             {/* Canvas 1 */}
-            <Canvas camera={{fov: 80, near: 0.1, far: 10000, position: [0,0,150]}}>
+            <Canvas className='canvas' camera={{fov: 45, near: 0.1, far: 1000, position: [0,200,500]}}>
                 <pointLight position={[10, 10, 10]} />
                 <ambientLight />
 
