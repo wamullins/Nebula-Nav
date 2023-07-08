@@ -20,91 +20,89 @@ import neptuneTexture from '../assets/neptune.jpeg'
 import plutoTexture from '../assets/pluto.jpeg'
  
 function CanvasComp() {
-
     const planetData = [
-        {
-            name: "Sun",
-            color: 'yellow',
-            texture: sunTexture,
-            position: [ 0, 0, 0 ],
-            radius: 48,
-            rotationSpeed: 0
-        },
-        {
-            name: "Mercury",
-            color: 'burlywood',
-            texture: mercuryTexture,
-            position: [ 100, 0, 0 ],
-            radius: 20,
-            rotationSpeed: 0.009
-        },
-        {
-            name: "Venus",
-            color: 'brown',
-            texture: venusTexture,
-
-            position: [ 200, 0, 0 ],
-            radius: 24,
-            rotationSpeed: 0.008
-        },
-        {
-            name: "Earth",
-            color: 'blue',
-            texture: earthTexture,
-            position: [300, 0, 0 ],
-            radius: 28,
-            rotationSpeed: 0.007
-        },
-        {
-            name: "Mars",
-            color: 'red',
-            texture: marsTexture,
-            position: [ 400, 0, 0 ],
-            radius: 28,
-            rotationSpeed: 0.006
-        },
-        {
-            name: "Jupiter",
-            color: 'orange',
-            texture: saturnTexture,
-            position: [ 500, 0, 0 ],
-            radius: 44,
-            rotationSpeed: 0.005
-        },
-        {
-            name: "Saturn",
-            color: 'beige',
-            texture: jupiterTexture,
-            position: [ 600, 0, 0 ],
-            radius: 40,
-            rotationSpeed: 0.004
-        },
-        {
-            name: "Uranus",
-            color: 'aqua',
-            texture: uranusTexture,
-            position: [ 700, 0, 0 ],
-            radius: 36,
-            rotationSpeed: 0.003
-        },
-        {
-            name: "Neptune",
-            color: 'purple',
-            texture: neptuneTexture,
-            position: [800, 0, 0 ],
-            radius: 32,
-            rotationSpeed: 0.002
-        },
-        {
-            name: "Pluto",
-            color: 'white',
-            texture: plutoTexture,
-            position: [ 900, 0, 0 ],
-            radius: 12,
-            rotationSpeed: 0.005
-        },
-    ]
-
+      {
+        name: "Sun",
+        color: "yellow",
+        texture: sunTexture,
+        position: [0, 0, 0],
+        radius: 48,
+        rotationSpeed: 0,
+      },
+      {
+        name: "Mercury",
+        color: "burlywood",
+        texture: mercuryTexture,
+        position: [100, 0, 0],
+        radius: 20,
+        rotationSpeed: 0.01,
+      },
+      {
+        name: "Venus",
+        color: "brown",
+        texture: venusTexture,
+        position: [200, 0, 0],
+        radius: 24,
+        rotationSpeed: 0.006,
+      },
+      {
+        name: "Earth",
+        color: "blue",
+        texture: earthTexture,
+        position: [300, 0, 0],
+        radius: 28,
+        rotationSpeed: 0.005,
+      },
+      {
+        name: "Mars",
+        color: "red",
+        texture: marsTexture,
+        position: [400, 0, 0],
+        radius: 28,
+        rotationSpeed: 0.004,
+      },
+      {
+        name: "Jupiter",
+        color: "orange",
+        texture: saturnTexture,
+        position: [500, 0, 0],
+        radius: 44,
+        rotationSpeed: 0.002,
+      },
+      {
+        name: "Saturn",
+        color: "beige",
+        texture: jupiterTexture,
+        position: [600, 0, 0],
+        radius: 40,
+        rotationSpeed: 0.0015,
+      },
+      {
+        name: "Uranus",
+        color: "aqua",
+        texture: uranusTexture,
+        position: [700, 0, 0],
+        radius: 36,
+        rotationSpeed: 0.001,
+      },
+      {
+        name: "Neptune",
+        color: "purple",
+        texture: neptuneTexture,
+        position: [800, 0, 0],
+        radius: 32,
+        rotationSpeed: 0.0008,
+      },
+      {
+        name: "Pluto",
+        color: "white",
+        texture: plutoTexture,
+        position: [900, 0, 0],
+        radius: 12,
+        rotationSpeed: 0.0005,
+      },
+    ];
+  
     const sizes = {
         width: window.innerWidth,
         height: window.innerHeight,
@@ -131,7 +129,7 @@ function CanvasComp() {
 
     return (
         <section className='canvas-div'>
-            <Canvas className='canvas' id='this-is-the-canvas' camera={{fov: 45, near: 0.1, far: 3000, position: [0,500,1500]}}>
+            <Canvas className='canvas' id='this-is-the-canvas' camera={{fov: 45, near: 0.1, far: 30000, position: [0,500,1500]}}>
                 <pointLight position={[10, 10, 10]} />
                 <ambientLight />
 

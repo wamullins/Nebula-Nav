@@ -1,8 +1,10 @@
 import React, { useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { useFrame } from "@react-three/fiber";
+import { useFrame, useThree } from "@react-three/fiber";
 import { Torus } from "@react-three/drei";
 import { useTexture } from "@react-three/drei";
+import { OrbitControls } from "@react-three/drei";
+import * as THREE from "three";
 
 // Component for rendering the orbit of the planet
 function PlanetOrbit({ radius }) {
@@ -24,6 +26,13 @@ function SphereComp(props) {
   const ref = useRef();
   const [hovered, setHovered] = useState(false);
   const navigate = useNavigate();
+  const { camera } = useThree();
+
+  // Add orbit controls
+  const controls = useRef();
+  useFrame(() => {
+    controls.current.update();
+  });
 
   // Subscribe this component to the render-loop, update position and rotation every frame
   useFrame((state, delta) => {
@@ -63,11 +72,26 @@ function SphereComp(props) {
         <sphereGeometry args={[props.radius, 64, 64]} />
         <meshStandardMaterial map={texture} />
       </mesh>
+
+      {/*   OrbitControls */}
+      <OrbitControls
+        ref={controls}
+        args={[camera]}
+        enablePan={true}
+        enableRotate={true}
+        mouseButtons={{
+          LEFT: THREE.MOUSE.ROTATE,
+          MIDDLE: THREE.MOUSE.DOLLY,
+          RIGHT: THREE.MOUSE.PAN,
+        }}
+      />
     </group>
   );
 }
 
 export default SphereComp;
+
+
 
 // import React, { useRef, useState } from "react";
 // import { useNavigate } from "react-router-dom"
