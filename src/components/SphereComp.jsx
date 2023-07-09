@@ -81,9 +81,16 @@ function SphereComp(props) {
         enableRotate={true}
         mouseButtons={{
           LEFT: THREE.MOUSE.ROTATE,
-          MIDDLE: THREE.MOUSE.DOLLY,
+         MIDDLE: THREE.MOUSE.DOLLY,
           // RIGHT: THREE.MOUSE.PAN,
         }}
+    //chrisEdits
+        enableZoom={true}
+        zoomSpeed={.25}
+        enableDamping = {true}
+        dampingFactor={.005}
+
+    //end here
       />
     </group>
   );
