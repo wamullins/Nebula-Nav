@@ -1,7 +1,7 @@
 import { Link, useLocation } from "react-router-dom";
 import useApi from "../useApi";
 import Transition from "./Transition";
-import '../app.css'
+import '../App.css'
 
 const CollectionPage = () => {
   let location = useLocation();
