@@ -26,7 +26,7 @@ const MoonPage = () => {
             <p className="water-text">Water Present: {object.has_water}</p>
             <p className="surf-temp-text">Surface Temperature: {object.surface_temperature}</p>
             <p className="gravity-text">Gravity: {object.gravity}</p>
-            <Link to="/moons" className="back-btn">Back</Link>
+            <Link to="/moons" className="back-btn">Go to Moons List</Link>
             <CommentSubmit objectId={object._id}/>
             <CommentSection objectId={object._id}/>
         </div>

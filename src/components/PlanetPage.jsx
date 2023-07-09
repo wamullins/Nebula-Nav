@@ -37,7 +37,7 @@ const PlanetPage = () => {
         </p>
         <p className="gravity-text">Gravity: {object.gravity}</p>
         <Link to="/planets" className="back-btn">
-          Back
+          Go to Planets List
         </Link>
         <CommentSubmit objectId={object._id}/>
         <CommentSection objectId={object._id}/>
