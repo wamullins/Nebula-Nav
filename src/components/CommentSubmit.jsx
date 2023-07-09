@@ -67,7 +67,7 @@ const CommentSubmit = ({ objectId }) => {
                 <input className="sender-input" id="sender" type="text" placeholder="Name"
                     onChange={handleChange} value={formState.sender} style={inputStyles}/>
                 <div>Comment:</div>
-                <input className="comment-input" id="content" type="text" placeholder="Comment Here" onChange={handleChange} value={formState.content} style={inputStyles}/>
+                <textarea className="comment-input" id="content" placeholder="Comment Here" onChange={handleChange} value={formState.content} style={inputStyles}/>
                 <button className="comment-submit" type="submit" style={buttonStyles}>
                     Submit
                 </button>

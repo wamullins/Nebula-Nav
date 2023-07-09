@@ -3,10 +3,8 @@ import CanvasComp from "./CanvasComp"
  
 function SolarSystemMap() {
     return (
-       
-          
-            <CanvasComp />
-         
+        
+       <CanvasComp />
        
     );
   }

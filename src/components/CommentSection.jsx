@@ -33,8 +33,7 @@ const CommentSection = ({ objectId }) => {
     background: "transparent",
     border: "1px solid white",
     color: "white",
-    padding: "0.5rem",
-    marginRight: "1vmin",
+    padding:"0.1rem .3rem",
     fontSize: "1rem",
     cursor: "pointer",
     transition: "border-color 0.3s ease",
@@ -50,7 +49,14 @@ const CommentSection = ({ objectId }) => {
       {filteredComments.map((comment) => (
         <div className="single-comment" key={comment._id}>
           {localStorage.getItem(`${comment._id}`) && (
-            <>
+            <div className="edit-x-div">
+              <CommentEdit
+                commentId={comment._id}
+                initialContent={comment.content}
+                onSave={(updatedContent) =>
+                  handleEdit(comment._id, updatedContent)
+                }
+              />
               <button
                 onClick={() => handleDelete(comment._id)}
                 style={buttonStyles}
@@ -63,18 +69,12 @@ const CommentSection = ({ objectId }) => {
               >
                 X
               </button>
-              <CommentEdit
-                commentId={comment._id}
-                initialContent={comment.content}
-                onSave={(updatedContent) =>
-                  handleEdit(comment._id, updatedContent)
-                }
-              />
-            </>
+            </div>
           )}
-
-          <h2 className="comment-sender">{comment.sender}</h2>
-          <p className="comment-content">{comment.content}</p>
+          <div className="comment-stuff" id={comment._id}>
+            <p className="comment-content">{comment.content}</p>
+            <p className="comment-sender"> - {comment.sender}</p>
+          </div>
         </div>
       ))}
     </div>
