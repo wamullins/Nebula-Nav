@@ -92,8 +92,6 @@ main {
   z-index: 1;
 }
 
-  
-
 .home-div {
   margin: 2rem;
 }
@@ -144,7 +142,7 @@ button {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  max-width: 40vw;
+  width: 40vw;
   border: 0.4vmin solid white;
   padding: 1vmin;
   text-decoration: none;
@@ -156,7 +154,6 @@ button {
 .detail-div > * {
   margin: 1vmin;
   text-decoration: none;
-
 }
 
 .detail-div-title-text {
@@ -167,10 +164,43 @@ button {
   text-decoration: none;
 }
 
+.comments-div {
+  width: 30vw;
+}
+
+
 .planetImage {
+  align-self: center;
+}
+
+.single-comment {
+  margin: 2vmin;
+  padding: 2vmin;
+  border: 1px solid white;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
+}
+
+.comment-stuff {
+  margin-left: 5vmin;
+  margin-right: 5vmin;
+}
+
+.comment-stuff > * {
+  overflow-wrap: anywhere;
+}
+
+.comment-sender {
+  color: #F7CB15;
+}
+
+.edit-x-div {
+  /* align-self: flex-end; */
+  margin: 0;
+}
+
+.text-area-edit {
+  width: 100%;
 }
 
 .planetImage img

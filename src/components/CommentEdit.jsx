@@ -14,16 +14,36 @@ const CommentEdit = ({ commentId, initialContent, onSave }) => {
 
       onSave(content);
       setEditMode(false);
+
+      let priorComment = document.getElementById(`${commentId}`) // unhide after changing the comment
+      priorComment.style.display = "block"
+
     } catch (error) {
       console.log(error);
     }
   };
 
+  if (editMode) { // if edting, hide the original comment
+    let priorComment = document.getElementById(`${commentId}`)
+    priorComment.style.display= "none" ;
+    
+
+
+    // below stuff will work when the id is put on the single-comment level instead of the comment-stuff level
+    // let priorComment = document.getElementById(`${commentId}`).getElementsByClassName("comment-stuff")
+    // console.log(priorComment)
+    // // let editBtns = document.querySelector(`#${commentId} > .edit-x-div`)
+    // priorComment.style.display= "none" ;
+    // // editBtns.style.alignSelf="flex-start"
+  }
+  
+
   const buttonStyles = {
     background: "transparent",
     border: "1px solid white",
     color: "white",
-    padding: "0.5rem 1rem",
+    marginRight: "1vmin",
+    padding: "0.1rem 1rem",
     borderRadius: "4px",
     fontSize: "1rem",
     cursor: "pointer",
@@ -39,7 +59,8 @@ const CommentEdit = ({ commentId, initialContent, onSave }) => {
     <>
       {editMode ? (
         <>
-          <textarea
+          <textarea 
+            className= "text-area-edit"
             value={content}
             onChange={(e) => setContent(e.target.value)}
           ></textarea>
