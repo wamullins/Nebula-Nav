@@ -18,7 +18,7 @@ Nebula-Nav is built using the following technologies:
 
 -   **React**: A JavaScript library for building user interfaces.
 -   **React Router**: A routing library for React applications.
--   **Three.js**: A 3D graphics library for creating WebGL-based visualizations.
+-   **Three.js Fiber**: A modern version of the Three.js library for creating WebGL-based visualizations.
 -   **Axios**: A promise-based HTTP client for making API calls.
 -   **CSS**: Used for styling and enhancing the visual appeal of the site.
 
@@ -29,7 +29,7 @@ To run Nebula-Nav locally, follow these steps:
 1. Clone the repository: `git clone <repository-url>`
 2. Navigate to the project directory: `cd Nebula-Nav`
 3. Install the dependencies: `npm install`
-4. Start the development server: `npm start`
+4. Start the development server: `npm run dev`
 
 ## API Integration
 
@@ -40,8 +40,7 @@ Nebula-Nav integrates with the following API to provide Space object data:
 -   [Trello Link](https://trello.com/b/xRKUbEC0/nebulanav)
 -   [Wireframe Link](https://www.figma.com/file/G9iycwERjxDzUgm13NrL09/NebulaNav?type=whiteboard&node-id=0-1&t=bBX22sFkUAjfQ8W4-0)
 -   [Deployed Site](https://nebula-nav.netlify.app/)
-
-**SpaceAPI**: A API that provides information about various Space objects, including stars, planets, galaxies, and more.
+-   [Link to our API](https://nebula-nav-api.vercel.app/planets)
 
 ## Contributing
 
@@ -49,10 +48,10 @@ Contributions to Nebula-Nav are welcome! If you would like to contribute, please
 
 1. Fork the repository and clone it to your local machine.
 2. Navigate to the project's root directory in your terminal.
-3. Create a new branch for your feature or bug fix: `git checkout -b my-feature`
+3. Create a new branch for your feature or bug fix: `git checkout -b [branchName]`
 4. Make your changes and test thoroughly.
 5. Commit your changes: `git commit -m 'Add new feature'`
-6. Push the branch to your forked repository: `git push origin my-feature`
+6. Push the branch to your forked repository: `git push origin myBranch`
 7. Open a pull request, describing the changes you've made.
 
 ##

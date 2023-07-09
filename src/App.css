@@ -14,15 +14,16 @@
   position: fixed;
   top: 0;
   display: flex;
+  flex-wrap: wrap; 
   justify-content: space-between;
   align-items: center;
-  height: 10vh;  
+  height: 10vh;
   width: 100%;
-  backdrop-filter: blur(2px); 
+  backdrop-filter: blur(2px);
   background-color: transparent;
-  border: 0.3vmin solid rgb(255, 255, 255);
-  padding: 0 1rem; 
-  z-index:2; 
+  border: 1px solid rgb(255, 255, 255);
+  padding: 0 1rem;
+  z-index: 2;
 }
 
 .nav-links {
@@ -30,7 +31,7 @@
   display: flex;
   align-items: center;
   justify-content: space-around;
-  margin-left: 1rem;  
+  margin-left: 1rem;
 }
 
 .nav-links > * {
@@ -39,8 +40,9 @@
 }
 
 .search-bar-div {
-  width: 30%;
+ margin-right: 2vmin;
   display: flex;
+  flex-wrap: wrap;  
   justify-content: center;
   align-items: center;
 }
@@ -48,12 +50,13 @@
 .select-box,
 .search-text,
 .search-button {
+  flex: 1;  
   height: 40px;
-  margin: 1rem;  
+  margin: 1rem;
   padding: 0;
   background-color: transparent;
-  backdrop-filter: blur(5px); 
-  border: 0.3vmin solid rgb(255, 255, 255);
+  backdrop-filter: blur(5px);
+  border: 1px solid rgb(255, 255, 255);
   border-radius: 10px;
 }
 
@@ -64,10 +67,12 @@
   padding: 0;
 }
 
+ 
+
 main {
   margin-top: 10vmin;
-  padding-top: 10vmin; 
-   
+  padding-top: 2vmin; 
+  margin-bottom: 2vmin;
   background-size: cover;
   background-position: center;
 }
@@ -112,12 +117,6 @@ button {
   display: none;
 }
 
-/* Additional styling for the canvas and other elements can be added here */
-
-
-
-
-
 .collection-grid > * {
   border: 0.3vmin solid rgb(255, 255, 255);
   padding: 2vmin;
@@ -157,7 +156,7 @@ button {
 .detail-div > * {
   margin: 1vmin;
   text-decoration: none;
-  text-decoration: none;
+
 }
 
 .detail-div-title-text {

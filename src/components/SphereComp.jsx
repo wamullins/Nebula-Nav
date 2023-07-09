@@ -82,7 +82,7 @@ function SphereComp(props) {
         mouseButtons={{
           LEFT: THREE.MOUSE.ROTATE,
           MIDDLE: THREE.MOUSE.DOLLY,
-          RIGHT: THREE.MOUSE.PAN,
+          // RIGHT: THREE.MOUSE.PAN,
         }}
       />
     </group>
