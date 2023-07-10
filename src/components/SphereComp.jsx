@@ -36,7 +36,7 @@ function SphereComp(props) {
 
   // Subscribe this component to the render-loop, update position and rotation every frame
   useFrame((state, delta) => {
-    const elapsedTime = state.clock.getElapsedTime();
+    const elapsedTime = (state.clock.getElapsedTime()+ 8008);
     const orbitSpeed = props.rotSpeed;
     const orbitRadius = props.position[0];
     const x = Math.cos(elapsedTime * orbitSpeed) * orbitRadius;
