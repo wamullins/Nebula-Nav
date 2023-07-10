@@ -15,8 +15,11 @@ const CommentEdit = ({ commentId, initialContent, onSave }) => {
       onSave(content);
       setEditMode(false);
 
-      let priorComment = document.getElementById(`${commentId}`) // unhide after changing the comment
-      priorComment.style.display = "block"
+      let editBtns = document.querySelector(`#${CSS.escape(commentId)} > .edit-x-div`)
+      editBtns.style.alignSelf="flex-end"
+
+      let newComment = document.querySelector(`#${CSS.escape(commentId)} > .comment-stuff`)
+      newComment.style.display= "block" ;
 
     } catch (error) {
       console.log(error);
@@ -24,17 +27,11 @@ const CommentEdit = ({ commentId, initialContent, onSave }) => {
   };
 
   if (editMode) { // if edting, hide the original comment
-    let priorComment = document.getElementById(`${commentId}`)
+    let editBtns = document.querySelector(`#${CSS.escape(commentId)} > .edit-x-div`)
+    editBtns.style.alignSelf="flex-start"
+
+    let priorComment = document.querySelector(`#${CSS.escape(commentId)} > .comment-stuff`)
     priorComment.style.display= "none" ;
-    
-
-
-    // below stuff will work when the id is put on the single-comment level instead of the comment-stuff level
-    // let priorComment = document.getElementById(`${commentId}`).getElementsByClassName("comment-stuff")
-    // console.log(priorComment)
-    // // let editBtns = document.querySelector(`#${commentId} > .edit-x-div`)
-    // priorComment.style.display= "none" ;
-    // // editBtns.style.alignSelf="flex-start"
   }
   
 

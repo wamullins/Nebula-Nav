@@ -47,7 +47,7 @@ const CommentSection = ({ objectId }) => {
   return (
     <div className="comments-div">
       {filteredComments.map((comment) => (
-        <div className="single-comment" key={comment._id}>
+        <div className="single-comment" key={comment._id} id={comment._id}>
           {localStorage.getItem(`${comment._id}`) && (
             <div className="edit-x-div">
               <CommentEdit
@@ -71,7 +71,7 @@ const CommentSection = ({ objectId }) => {
               </button>
             </div>
           )}
-          <div className="comment-stuff" id={comment._id}>
+          <div className="comment-stuff">
             <p className="comment-content">{comment.content}</p>
             <p className="comment-sender"> - {comment.sender}</p>
           </div>

@@ -28,7 +28,7 @@ const BodyPage = () => {
             <p className="alien-text">Aliens: {object.has_aliens}</p>
             <p className="surf-temp-text">Average Surface Temperature: {object.surface_temperature}</p>
             <p className="gravity-text">Gravity: {object.gravity}</p>
-            <Link to="/bodies" className="back-btn">Back</Link>
+            <Link to="/bodies" className="back-btn">Go to Suns List</Link>
             <CommentSubmit objectId={object._id}/>
             <CommentSection objectId={object._id}/>
         </div>

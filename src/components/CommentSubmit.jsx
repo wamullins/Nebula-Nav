@@ -30,12 +30,9 @@ const CommentSubmit = ({ objectId }) => {
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
-        maxWidth: '400px',
+        width: '20vw',
         margin: '0 auto',
-        padding: '20px',
-        marginLeft:'100px',
         borderRadius: '8px',
-        
         fontFamily: 'Gravitas One', 
     };
 
@@ -47,20 +44,17 @@ const CommentSubmit = ({ objectId }) => {
         border: '0.3vmin solid rgb(255, 255, 255)',
         borderRadius: '10px',
         backgroundColor: 'transparent'
-        
     };
 
     const buttonStyles = {
         backgroundColor: 'transparent',
-        color: 'white',
-        padding: '10px 20px',
-       
+        color: '#F7CB15',
         borderRadius: '4px',
         cursor: 'pointer',
     };
 
     return (
-        <div id="submit-comment-box" className="hidden">
+        <div className="submit-comment-box">
             <form onSubmit={handleSubmit} style={formContainerStyles}>
                 <div className="submit-comment-title">Add a Comment</div>
                 <div>Sender:</div>
@@ -72,8 +66,6 @@ const CommentSubmit = ({ objectId }) => {
                     Submit
                 </button>
             </form>
-            {/* <div id="thankYou" class="hidden">Thank you for your comment</div> */}
-            {/* <button id="closeSubmit">Close</button> */}
         </div>
     );
 };
