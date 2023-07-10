@@ -125,7 +125,6 @@ button {
   backdrop-filter: blur(5px); 
   padding: 5vmin; 
   box-shadow: 0 0 10px rgb(255, 255, 255); 
-  
 }
 
 
@@ -142,12 +141,11 @@ button {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  width: 40vw;
+  width: 50vw;
   border: 0.4vmin solid white;
-  padding: 1vmin;
+  padding: 5vmin;
   text-decoration: none;
   backdrop-filter: blur(5px); 
-  padding: 2vmin; 
   box-shadow: 0 0 10px rgb(255, 255, 255); 
 }
 
@@ -164,12 +162,32 @@ button {
   text-decoration: none;
 }
 
-.comments-div {
-  width: 30vw;
+.submit-comment-box {
+  width: 40vw;
+  margin: 3vmin;
+  padding: 3vmin;
+  border-top: 1px solid #F7CB15;
+  border-bottom: 1px solid #F7CB15;
 }
 
+.submit-comment-title,
+.comment-sender {
+  color: #F7CB15;
+}
 
-.planetImage {
+.submit-comment-title {
+  margin-bottom: 2vmin;
+  width: 40vw;
+  text-align: center;
+}
+
+.comments-div {
+  width: 40vw;
+}
+
+.planetImage, 
+.submit-comment-box,
+.comments-div {
   align-self: center;
 }
 
@@ -190,13 +208,12 @@ button {
   overflow-wrap: anywhere;
 }
 
-.comment-sender {
-  color: #F7CB15;
-}
-
 .edit-x-div {
-  /* align-self: flex-end; */
+  width: 100%;
   margin: 0;
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
 }
 
 .text-area-edit {
