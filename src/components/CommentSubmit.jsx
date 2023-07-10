@@ -40,7 +40,6 @@ const CommentSubmit = ({ objectId }) => {
         width: '190%',
         padding: '8px',
         marginBottom: '10px',
-        borderRadius: '4px',
         border: '0.3vmin solid rgb(255, 255, 255)',
         borderRadius: '10px',
         backgroundColor: 'transparent'

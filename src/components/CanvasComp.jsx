@@ -3,6 +3,7 @@
 // https://docs.pmnd.rs/react-three-fiber/tutorials/loading-textures -- cite to show how to load textures
 
 import "../App.css";
+
 import { Canvas } from "@react-three/fiber";
 // import { useTexture } from "@react-three/drei" // apparently i can use this to set up multiple cameras. react three fiber takes care of default camera set up
 import SphereComp from "./SphereComp";
@@ -107,25 +108,6 @@ function CanvasComp() {
         width: window.innerWidth,
         height: window.innerHeight,
     };
-
-    console.log(sizes)
-
-    // testing area that is currently not working
-    /////////////////  /////////////////  /////////////////  ///////////////// 
-    // planetData.forEach((planet) => console.log(planet.name))
-
-    console.log(planetData)
-
-    const testmap = planetData.map((planet, idx) => (
-  <SphereComp key={idx} position={planet.position} texture={planet.texture} radius={planet.radius} color={planet.color} rotSpeed={planet.rotationSpeed} />
-));
-
-    // i have no idea why this is still popping up as undefined
-    console.log(testmap)
-
-    console.log(planetData[0])
-    console.log(planetData[0].position)
-    /////////////////  /////////////////  /////////////////  ///////////////// 
 
     return (
         <section className='canvas-div'>

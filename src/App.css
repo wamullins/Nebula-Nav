@@ -69,8 +69,6 @@
 
 }
 
- 
-
 main {
   margin-top: 12vmin;
    
@@ -116,6 +114,14 @@ button {
 .hover-info {
   display: none;
 }
+
+.planet-popup {
+  position: fixed;
+  left: 5vmin;
+  font-size: 7vmin;
+  color: #F7CB15
+}
+
 
 .collection-grid > * {
   border: 0.3vmin solid rgb(255, 255, 255);

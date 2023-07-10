@@ -1,4 +1,5 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useContext } from "react";
+import PlanetContext from "../PlanetContext";
 import { useNavigate } from "react-router-dom";
 import { useFrame, useThree } from "@react-three/fiber";
 import { Torus } from "@react-three/drei";
@@ -49,11 +50,24 @@ function SphereComp(props) {
   // Handle click event
   const handleClick = (name) => {
     if (name === "Sun") {
-      navigate(`/bodies/${props.name}`);
+      navigate(`/bodies/${name}`);
     } else {
-      navigate(`/planets/${props.name}`);
+      navigate(`/planets/${name}`);
     }
   };
+
+  const { planetInfo, setPlanetInfo } = useContext(PlanetContext)
+
+  const handleHover = (bool, name) => {
+
+      setHovered(bool)
+      console.log(name)
+
+      setPlanetInfo({
+        ...planetInfo, 
+        name: name,
+    })
+  }
 
   return (
     <group>
@@ -64,10 +78,10 @@ function SphereComp(props) {
       <mesh
         {...props}
         ref={ref}
-        scale={hovered ? 1.1 : 1}
+        scale={hovered ? 1.4 : 1}
         onClick={() => handleClick(props.name)}
-        onPointerOver={() => setHovered(true)}
-        onPointerOut={() => setHovered(false)}
+        onPointerOver={() => handleHover(true, props.name)}
+        onPointerOut={() => handleHover(false,'')}
       >
         <sphereGeometry args={[props.radius, 64, 64]} />
         <meshStandardMaterial map={texture} />
