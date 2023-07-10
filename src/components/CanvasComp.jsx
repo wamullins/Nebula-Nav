@@ -35,7 +35,7 @@ function CanvasComp() {
         texture: mercuryTexture,
         position: [100, 0, 0],
         radius: 20,
-        rotationSpeed: -0.3, 
+        rotationSpeed: -0.03, 
       },
       {
         name: "Venus",
@@ -43,7 +43,7 @@ function CanvasComp() {
         texture: venusTexture,
         position: [200, 0, 0],
         radius: 24,
-        rotationSpeed: -0.18, 
+        rotationSpeed: -0.018, 
       },
       {
         name: "Earth",
@@ -51,7 +51,7 @@ function CanvasComp() {
         texture: earthTexture,
         position: [300, 0, 0],
         radius: 28,
-        rotationSpeed: -0.15, 
+        rotationSpeed: -0.015, 
       },
       {
         name: "Mars",
@@ -59,7 +59,7 @@ function CanvasComp() {
         texture: marsTexture,
         position: [400, 0, 0],
         radius: 28,
-        rotationSpeed: -0.12, 
+        rotationSpeed: -0.012, 
       },
       {
         name: "Jupiter",
@@ -67,7 +67,7 @@ function CanvasComp() {
         texture: saturnTexture,
         position: [500, 0, 0],
         radius: 44,
-        rotationSpeed: -0.08, 
+        rotationSpeed: -0.008, 
       },
       {
         name: "Saturn",
@@ -75,7 +75,7 @@ function CanvasComp() {
         texture: jupiterTexture,
         position: [600, 0, 0],
         radius: 40,
-        rotationSpeed: -0.06, 
+        rotationSpeed: -0.006, 
       },
       {
         name: "Uranus",
@@ -83,7 +83,7 @@ function CanvasComp() {
         texture: uranusTexture,
         position: [700, 0, 0],
         radius: 36,
-        rotationSpeed: -0.04,  
+        rotationSpeed: -0.004,  
       },
       {
         name: "Neptune",
@@ -91,7 +91,7 @@ function CanvasComp() {
         texture: neptuneTexture,
         position: [800, 0, 0],
         radius: 32,
-        rotationSpeed: -0.032, 
+        rotationSpeed: -0.0032, 
       },
       {
         name: "Pluto",
@@ -99,7 +99,7 @@ function CanvasComp() {
         texture: plutoTexture,
         position: [900, 0, 0],
         radius: 12,
-        rotationSpeed: -0.08,
+        rotationSpeed: -0.008,
       },
     ];
   
