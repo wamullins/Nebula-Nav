@@ -33,7 +33,7 @@ To run Nebula-Nav locally, follow these steps:
 
 ## API Integration
 
-Nebula-Nav integrates with the following API to provide Space object data:
+Nebula-Nav integrates with the following API to provide Space object data: [The Nebula-Nav-Api](https://github.com/Maxsos133/Nebula-Nav-api)
 
 ## Relevant Links
 
