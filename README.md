@@ -42,7 +42,7 @@ Nebula-Nav integrates with the following API to provide Space object data:
 -   [Deployed Site](https://nebula-nav.netlify.app/)
 -   [Link to our API](https://nebula-nav-api.vercel.app/planets)
 
-## Contributing
+## Contributing 
 
 Contributions to Nebula-Nav are welcome! If you would like to contribute, please follow these steps:
 
@@ -54,6 +54,18 @@ Contributions to Nebula-Nav are welcome! If you would like to contribute, please
 6. Push the branch to your forked repository: `git push origin myBranch`
 7. Open a pull request, describing the changes you've made.
 
-##
+## Contact Us
+
+[user@example.com](mailto:user@example.com)
+
+[Shay-Saad Wasil](https://github.com/Shay-W152)         [Email](mailto:fwasil83@gmail.com)
+
+[Max Pavlenko](https://github.com/Maxsos133)            [Email](mailto:max.pavlenko133@gmail.com)
+
+[Andrew Mullins](https://github.com/wamullins)          [Email](mailto:mullinsa428@gmail.com)         
+
+[Christopher Erb](https://github.com/ChristopherErb)    [Email](mailto:christopherErb01@gmail.com)
+
 
 Enjoy exploring the depths of the universe with Nebula-Nav!
+
