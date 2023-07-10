@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Transition from "./Transition";
+ 
 
 const Home = () => {
   const spaceFacts = [
@@ -40,19 +40,7 @@ const Home = () => {
   return (
     <div style={containerStyle}>
       <h1 style={headingStyle}>.nebulaNav</h1>
-      <Transition in={randomFact !== ""} timeout={500} classNames="slide">
-        <p>{randomFact}</p>
-      </Transition>
-      <button
-        onClick={handleFactButtonClick}
-        style={{
-          background: "transparent",
-          border: "1px solid white",
-          color: "white",
-        }}
-      >
-        Learn Something Cool
-      </button>
+      
       <div style={contentContainerStyle}>
         <div style={additionalInfoContainerStyle}>
           <p style={additionalInfoStyle}>
@@ -127,8 +115,22 @@ const Home = () => {
               Navigate through a 3D model of our solar system.
             </div>
           </a>
+          
         </div>
       </div>
+      
+        <p>{randomFact}</p>
+      
+      <button
+        onClick={handleFactButtonClick}
+        style={{
+          background: "transparent",
+          border: "1px solid white",
+          color: "white",
+        }}
+      >
+        Learn Something Cool
+      </button>
     </div>
   );
 };
@@ -145,36 +147,31 @@ const containerStyle = {
   overflow: "auto",
 };
 
-
-const headingStyle = {
-  marginTop: "20px",
-};
-
 const contentContainerStyle = {
   display: "flex",
+  flexDirection: "column", 
 };
+const headingStyle = {
+  marginTop:'-250px',
+  color:'white'
+};
+
 
 const additionalInfoContainerStyle = {
   flex: "1",
   marginLeft: "20px",
-  maxWidth:'20rem',
-  marginRight:'10vmin',
-  backdropFilter: 'blur(2px)',
-  backgroundColor: 'transparent',
-  border: '1px solid rgb(255, 255, 255)',
-  borderRadius:'10px',
-  padding:'2rem',
-  boxShadow: "0 0 10px rgba(255, 255, 255, 0.9)",
+  marginRight: "20px",
+  
 };
 
+
 const gridContainerStyle = {
-  display: "grid",
-  gridTemplateColumns: "repeat(2, 1fr)",
+  display: "flex",
   gap: "40px",
   marginTop: "50px",
   justifyContent: "center",
-  
 };
+
 
 
 const squareStyle = {
@@ -194,12 +191,23 @@ const squareStyle = {
   transition: "box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out",
   cursor: "pointer",
   boxShadow: "0 0 10px rgba(255, 255, 255, 0.9)",
+  marginBottom:'50px'
+};
+const additionalInfoStyle = {
+  fontSize: "18px",
+  color: "#ffffff",
+  marginBottom: "30px",
+  textAlign: "center",
+  fontStyle: "italic",
 };
 
-const additionalInfoStyle = {
-  fontSize: "16px",
-  marginTop:"10rem",
-  
+const randomFactStyle = {
+  fontSize: "24px",
+  color: "#ffffff",
+  fontWeight: "bold",
+  textAlign: "center",
+  marginTop: "20px",
 };
+
 
 export default Home;
