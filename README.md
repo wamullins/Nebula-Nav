@@ -33,7 +33,7 @@ To run Nebula-Nav locally, follow these steps:
 
 ## API Integration
 
-Nebula-Nav integrates with the following API to provide Space object data:
+Nebula-Nav integrates with the following API to provide Space object data: [The Nebula-Nav-Api](https://github.com/Maxsos133/Nebula-Nav-api)
 
 ## Relevant Links
 
@@ -56,15 +56,13 @@ Contributions to Nebula-Nav are welcome! If you would like to contribute, please
 
 ## Contact Us
 
-[user@example.com](mailto:user@example.com)
+[Shay-Saad Wasil](https://github.com/Shay-W152)         Email:[fwasil83@gmail.com](mailto:fwasil83@gmail.com)
 
-[Shay-Saad Wasil](https://github.com/Shay-W152)         [Email](mailto:fwasil83@gmail.com)
+[Max Pavlenko](https://github.com/Maxsos133)            Email:[max.pavlenko133@gmail.com](mailto:max.pavlenko133@gmail.com)
 
-[Max Pavlenko](https://github.com/Maxsos133)            [Email](mailto:max.pavlenko133@gmail.com)
+[Andrew Mullins](https://github.com/wamullins)          Email:[mullinsa428@gmail.com](mailto:mullinsa428@gmail.com)         
 
-[Andrew Mullins](https://github.com/wamullins)          [Email](mailto:mullinsa428@gmail.com)         
-
-[Christopher Erb](https://github.com/ChristopherErb)    [Email](mailto:christopherErb01@gmail.com)
+[Christopher Erb](https://github.com/ChristopherErb)    Email:[christopherErb01@gmail.com](mailto:christopherErb01@gmail.com)
 
 
 Enjoy exploring the depths of the universe with Nebula-Nav!
